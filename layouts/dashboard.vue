@@ -6,10 +6,10 @@
       </div>
       <div class="col-md-12">
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="sidebar-layout-wrap">
             <Sidebar/>
           </div>
-          <div class="col-md-10 body-content">
+          <div class="body-content">
             <Nuxt/>
           </div>
         </div>

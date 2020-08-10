@@ -5,16 +5,15 @@
         <nuxt-link to="/dashboard" class="sidebar-item__link">
           <span><img class="sidebar-item__img"
                      src="/images/dashboard/dashboard.png"
-                     alt="icon"></span>Dashboard
+                     alt="icon"></span>
         </nuxt-link>
       </div>
         <nuxt-link to="/user-access" class="sidebar-item__link">
           <span><img class="sidebar-item__img"
                      src="/images/dashboard/social.png"
-                     alt="icon"></span>User Access
+                     alt="icon"></span>
         </nuxt-link>
       </div>
-    </div>
   </div>
 </template>
 

@@ -26,7 +26,10 @@
             type="text"
             placeholder="Reason"
             v-model="registerDetails.reason"/>
-          <button>Sign Up</button>
+          <button>
+            <span v-if="loading"><Spinner /></span>
+            <span v-else>Sign Up</span>
+          </button>
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -40,7 +43,10 @@
           </div>
           <input type="email" placeholder="Email" v-model="loginDetails.emailAddress"/>
           <input type="password" placeholder="Password" v-model="loginDetails.password"/>
-          <button>Sign In</button>
+          <button>
+            <span v-if="loading"><Spinner /></span>
+            <span v-else>Sign In</span>
+          </button>
         </form>
       </div>
       <div class="overlay-container">
@@ -48,7 +54,9 @@
           <div class="overlay-panel overlay-left">
             <h2>Welcome Back!</h2>
             <p>To keep connected with us please login with your personal info</p>
-            <button class="ghost" @click="switchLayout">Sign In</button>
+            <button class="ghost" @click="switchLayout">
+              Sign In
+            </button>
           </div>
           <div class="overlay-panel overlay-right">
             <h2>Hello, Friend!</h2>
@@ -63,9 +71,13 @@
 
 <script>
   import {mapState} from "vuex";
+  import Spinner from "../components/Spinner";
 
   export default {
     name: "index",
+    components : {
+
+    },
     data() {
       return {
         showLogin: false,
@@ -78,14 +90,16 @@
           desiredPassword: '',
           contactNumber: '',
           reason: ''
-        }
+        },
+        loading : false
       }
     },
     methods: {
       login() {
+        this.loading = true;
         this.$store.dispatch('auth/login', this.loginDetails)
         .then(res => {
-          console.log(res);
+          this.loading = false
           if (res.data.status) this.$router.push('/dashboard');
         });
       },
@@ -94,7 +108,6 @@
         if (checked.length !== 4) this.$store.commit('auth/set_error', 'Please fill all the fields')
         this.$store.dispatch('auth/register', this.registerDetails)
           .then(res => {
-            console.log(res.data)
             if(res.data.status){
               this.showLogin = false;
             }

@@ -2,9 +2,26 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.sidebar-layout-wrap {
+  width: 70px;
+}
+
 .body-content {
+  flex-grow: 1;
   background-color: #f1f1f3;
   height: calc(100vh - 64px);
   padding: 25px 10px !important;
 }
 
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.spinner-border{
+  height: 1rem;
+  width: 1rem;
+}

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row no-gutters">
-      <div class="col-md-12">
+      <div class="col-md-10 ml-3">
         <div class="card">
           <div class="card-header">
             Requests
@@ -27,10 +27,8 @@
                 <td>{{request.contactNumber}}</td>
                 <td>{{request.reason}}</td>
                 <td>{{request.status}}</td>
-                <td>
+                <td class="text-center">
                   <button class="btn btn-success" @click="approve(request._id)">Approve</button>
-                </td>
-                <td>
                   <button class="btn btn-danger" @click="reject(request._id)">Reject</button>
                 </td>
               </tr>

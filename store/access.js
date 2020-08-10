@@ -17,11 +17,9 @@ export const actions = {
   getAllRequests({commit}){
     return api.access.allAccess()
       .then(res => {
-        console.log(res);
         commit('set_requests', res.data.payload.data.requests)
       })
       .catch(err => {
-        console.log(err.response.data)
         commit('set_error', err.response.data.payload.message);
       })
   },

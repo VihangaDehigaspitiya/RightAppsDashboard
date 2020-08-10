@@ -36,8 +36,11 @@
   }
 
   .device {
+    &:first-child{
+      padding: 15px 15px;
+    }
     background-color: #ffffff;
-    padding: 15px;
+    padding: 20px 15px;
     border-radius: 7px;
     margin-bottom: 7px;
     cursor: pointer;
@@ -45,7 +48,6 @@
     &__name {
       font-size: 16px;
       font-weight: $font-medium;
-      margin-bottom: 5px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

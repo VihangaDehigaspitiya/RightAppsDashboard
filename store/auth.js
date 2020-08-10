@@ -23,7 +23,6 @@ export const actions = {
         return res
       })
       .catch(err => {
-        console.log(err.response.data)
         commit('set_error', err.response.data.payload.message);
       })
   },
@@ -34,7 +33,6 @@ export const actions = {
         return res;
       })
       .catch(err => {
-        console.log(err.response.data)
         commit('set_error', err.response.data.payload.message);
       })
   },
