@@ -1,0 +1,62 @@
+.dashboard-wrap {
+  .map-wrap {
+    height: 88vh;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 0 10px;
+    overflow-y: auto;
+  }
+
+  .devices-list {
+    overflow-y: auto;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #c6c6c6;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #b7b7b7;
+    }
+  }
+
+  .device {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
+
+    &__name {
+      font-size: 16px;
+      font-weight: $font-medium;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__description {
+      font-size: 13px;
+      color: #8d8d8d;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
